@@ -9,7 +9,7 @@ const DashboardSummary = () => {
   const [loading, setLoading] = useState(true);
   const [selectedUser, setSelectedUser] = useState(null);
 
-  // ✅ fetchBalances wrapped in useCallback to satisfy ESLint
+  //  fetchBalances wrapped in useCallback to satisfy ESLint
   const fetchBalances = useCallback(() => {
     if (!userId) {
       console.warn("❌ user_id missing");
@@ -32,7 +32,7 @@ const DashboardSummary = () => {
       .finally(() => setLoading(false));
   }, [userId]);
 
-  // ✅ useEffect calls fetchBalances when userId changes
+  //  useEffect calls fetchBalances when userId changes
   useEffect(() => {
     fetchBalances();
   }, [fetchBalances]);
@@ -102,7 +102,7 @@ const DashboardSummary = () => {
         <SettleUpModal
           user={selectedUser}
           onClose={() => setSelectedUser(null)}
-          refresh={fetchBalances} // ✅ refresh balances after settle
+          refresh={fetchBalances} //  refresh balances after settle
         />
       )}
     </>
