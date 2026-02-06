@@ -10,7 +10,7 @@ const AddMembers = () => {
   const [members, setMembers] = useState([]);
   const [selectedUser, setSelectedUser] = useState("");
 
-  // 🔹 Fetch all users (for dropdown)
+  //  Fetch all users (for dropdown)
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then(res => res.json())
@@ -18,7 +18,7 @@ const AddMembers = () => {
       .catch(err => console.error(err));
   }, []);
 
-  // 🔹 Fetch group members
+  //  Fetch group members
   useEffect(() => {
     if (!group) return;
 
@@ -33,7 +33,7 @@ const handleAddMember = async () => {
     return;
   }
 
-  const selectedUserId = Number(selectedUser); // 👈 convert once
+  const selectedUserId = Number(selectedUser); //  convert once
 
   // prevent duplicate
   const alreadyAdded = members.find(m => m.id === selectedUserId);
@@ -80,7 +80,7 @@ const handleAddMember = async () => {
           {group.group_type} Group • Add Members
         </p>
 
-        {/* ➕ Select Member */}
+        {/*  Select Member */}
         <div className="flex gap-2 mb-4">
           <select
             value={selectedUser}
@@ -103,7 +103,7 @@ const handleAddMember = async () => {
           </button>
         </div>
 
-        {/* 👥 Members Table */}
+        {/*  Members Table */}
         <div className="mb-4">
           <h3 className="font-semibold mb-2">Group Members</h3>
 
