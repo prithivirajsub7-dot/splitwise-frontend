@@ -10,7 +10,6 @@ import AddMembers from "./AddMembers";
 import AddExpense from "./AddExpenses";
 import GroupExpenses from "./GroupExpenses";
 import ExpenseDetails from "./ExpenseDetails";
-// import GroupSummary from "./GroupSummery";
 
 function App() {
   return (
@@ -25,11 +24,7 @@ function App() {
         <Route path="/add-members" element={<AddMembers />} />
         <Route path="/add-expense" element={<AddExpense />} />
         <Route path="/group/:groupId/expenses" element={<GroupExpenses />}/>
-<Route path="/expenses/:expenseId" element={<ExpenseDetails />} />
-{/* <Route path="/groups/:groupId/summary" element={<ExpenseDetails />} /> */}
-
-{/* <Route path="/groups/:groupId/summary" element={<GroupSummary />} /> */}
-
+        <Route path="/expenses/:expenseId" element={<ExpenseDetails />} />
       </Routes>
     </BrowserRouter>
   );
