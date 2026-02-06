@@ -11,7 +11,7 @@ import {
 import Groups from "./Groups";
 import DashboardSummary from "./DashboardSummary";
 
-/* 🔹 Group Icon Helper */
+/*  Group Icon Helper */
 export const getGroupIcon = (type, size = 22) => {
   switch (type) {
     case "Trip":
@@ -30,13 +30,13 @@ function Dashboard() {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  /* 🔐 Login check */
+  /*  Login check */
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) navigate("/login");
   }, [navigate]);
 
-  /* 📦 Fetch groups */
+  /*  Fetch groups */
   useEffect(() => {
     fetch("http://localhost:3000/allgroups")
       .then((res) => res.json())
@@ -50,18 +50,18 @@ function Dashboard() {
       });
   }, []);
 
-  /* 🚪 Logout */
+  /*  Logout */
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
 
-  /* ➕ Create group */
+  /*  Create group */
   const handleCreateGroup = () => {
     navigate("/create-group");
   };
 
-  /* ➕ Add expense */
+  /*  Add expense */
   const handleAddExpense = () => {
     if (groups.length === 0) {
       alert("Create a group first 🙂");
@@ -82,7 +82,7 @@ function Dashboard() {
     <div className="min-h-screen bg-gray-100 p-4 md:p-6">
       <div className="max-w-4xl mx-auto space-y-6">
 
-        {/* 🔝 HEADER */}
+        {/*  HEADER */}
         <div className="bg-white rounded-2xl shadow p-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-purple-600">
             Splitwise
@@ -96,10 +96,10 @@ function Dashboard() {
           </button>
         </div>
 
-        {/* 🔥 BALANCE SUMMARY (MOST IMPORTANT) */}
+        {/*  BALANCE SUMMARY (MOST IMPORTANT) */}
         <DashboardSummary />
 
-        {/* ⚡ QUICK ACTIONS */}
+        {/*  QUICK ACTIONS */}
         <div className="bg-white rounded-2xl shadow p-5">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">
             ⚡ Quick Actions
@@ -122,7 +122,7 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* 👥 GROUPS LIST */}
+        {/*  GROUPS LIST */}
         <div className="bg-white rounded-2xl shadow p-5">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">
             👥 Your Groups
