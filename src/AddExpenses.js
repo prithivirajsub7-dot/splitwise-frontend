@@ -14,10 +14,10 @@ const AddExpense = () => {
   const [desc, setDesc] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ✅ FIX HERE: include paidBy in splitMembers
+  //  include paidBy in splitMembers
   useEffect(() => {
     if (members.length > 0) {
-      setSplitMembers(members.map(m => m.id)); // include all members, including payer
+      setSplitMembers(members.map(m => m.id)); 
     }
   }, [members]);
 
@@ -51,7 +51,7 @@ const AddExpense = () => {
           paid_by: paidBy,
           amount,
           description: desc,
-          members: splitMembers, // 👈 send all members including payer
+          members: splitMembers, //  send all members including payer
         }),
       });
 
