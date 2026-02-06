@@ -64,7 +64,7 @@ function CreateGroup() {
           Create New Group
         </h2>
 
-        {/* 🔹 Group type boxes */}
+        {/*  Group type boxes */}
         <div className="grid grid-cols-2 gap-4 mb-4">
           {groupTypes.map((type) => (
             <div
@@ -72,7 +72,7 @@ function CreateGroup() {
               onClick={() => {
                 setSelectedType(type.name);
                 if (type.name !== "Trip") {
-                  setEnableTripDates(false); // 🔹 reset if not trip
+                  setEnableTripDates(false); //  reset if not trip
                 }
               }}
               className={`cursor-pointer border rounded-lg p-4 flex flex-col items-center justify-center
@@ -88,7 +88,7 @@ function CreateGroup() {
           ))}
         </div>
 
-        {/* 🔹 Trip toggle */}
+        {/*  Trip toggle */}
         {selectedType === "Trip" && (
           <div className="mb-4">
             <label className="flex items-center justify-between">
@@ -103,7 +103,7 @@ function CreateGroup() {
           </div>
         )}
 
-        {/* 🔹 Trip dates */}
+        {/*  Trip dates */}
         {selectedType === "Trip" && enableTripDates && (
           <div className="grid grid-cols-2 gap-3 mb-4">
             <input
@@ -121,7 +121,7 @@ function CreateGroup() {
           </div>
         )}
 
-        {/* 🔹 Group name */}
+        {/*  Group name */}
  <input
   type="text"
   placeholder="Group Name"
@@ -139,7 +139,7 @@ function CreateGroup() {
 />
 
 
-        {/* 🔹 Create button */}
+        {/*  Create button */}
    <button
   onClick={handleCreateGroup}
   className="w-full bg-green-500 text-white py-2 rounded"
